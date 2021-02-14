@@ -1,7 +1,7 @@
 import javafx.geometry.Orientation
 import tornadofx.*
 
-class HelloWorld : View() {
+class CompileView : View() {
     override val root = form {
         fieldset(labelPosition = Orientation.VERTICAL) {
             label("C Code")
@@ -23,6 +23,8 @@ class HelloWorld : View() {
             textarea {
                 prefRowCount = 3
             }
+            label("Compilation Time")
+            textfield()
         }
     }
 }
