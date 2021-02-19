@@ -1,3 +1,7 @@
+package edu.hm.cs.coolpile.client
+
+import edu.hm.cs.coolpile.client.view.CompileView
+import edu.hm.cs.coolpile.client.view.Styles
 import javafx.application.Application
 import tornadofx.*
 

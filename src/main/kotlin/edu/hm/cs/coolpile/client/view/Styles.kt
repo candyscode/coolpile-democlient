@@ -1,3 +1,5 @@
+package edu.hm.cs.coolpile.client.view
+
 import javafx.scene.text.FontWeight
 import tornadofx.Stylesheet
 import tornadofx.px

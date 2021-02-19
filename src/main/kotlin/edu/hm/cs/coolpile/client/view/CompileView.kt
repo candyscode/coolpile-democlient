@@ -1,9 +1,11 @@
+package edu.hm.cs.coolpile.client.view
+
 import com.beust.klaxon.Klaxon
 import javafx.beans.property.SimpleStringProperty
 import javafx.geometry.Orientation
-import model.CompileResult
+import edu.hm.cs.coolpile.client.model.CompileResult
 import tornadofx.*
-import util.runOnHost
+import edu.hm.cs.coolpile.client.util.runOnHost
 import java.util.*
 
 class CompileView : View() {
@@ -69,8 +71,12 @@ class CompileView : View() {
     private fun sendCompileRequest(sourceCode: String): CompileResult? {
         val encodedSourceCode = sourceCode.encodeWithBase64()
         val requestJsonString = "{\"sourceCode\": \"$encodedSourceCode\"}"
-        val resultJsonString = runOnHost(arrayOf("./src/main/kotlin/util/getRequest.sh", requestJsonString))
+        val resultJsonString = runOnHost(arrayOf(getRequestScriptPath, requestJsonString))
 
         return Klaxon().parse(resultJsonString)
+    }
+
+    companion object {
+        private const val getRequestScriptPath = "./src/main/shell/getRequest.sh"
     }
 }

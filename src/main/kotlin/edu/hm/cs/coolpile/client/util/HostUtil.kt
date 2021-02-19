@@ -1,4 +1,4 @@
-package util
+package edu.hm.cs.coolpile.client.util
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
