@@ -8,9 +8,11 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 dependencies {
     implementation("no.tornado:tornadofx:1.7.20")
+    implementation("com.beust:klaxon:5.4")
     testImplementation(kotlin("test-junit"))
 }
 tasks.withType<KotlinCompile>() {
